@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tsladaily.com/sitemap-index.xml
+Sitemap: https://3x-alpha.com/sitemap-index.xml

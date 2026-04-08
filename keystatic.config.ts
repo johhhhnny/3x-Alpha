@@ -7,7 +7,7 @@ export default config({
   },
   ui: {
     brand: {
-      name: "TslaDaily",
+      name: "3x-Alpha",
     },
     navigation: ["---", "articles", "---", "authors", "categories"],
   },

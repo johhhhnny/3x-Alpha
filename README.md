@@ -1,35 +1,31 @@
-# Astro News 📰
+# 3x-Alpha 📈
 
-A news website built with Astro, designed to provide a modern and responsive news reading experience.
+一个专注于 3 倍杠杆 ETF 与期权策略分享的现代博客。
 
-> **ℹ️ Info**  
-> Astro news is my first open-source project, so there may be some bugs or issues. I’ll address them as quickly as possible.
+> **ℹ️ 信息**  
+> 3x-Alpha 旨在为投资者提供深度的杠杆 ETF 分析和实用的期权交易策略。
 
-![Astro News](./src/assets/images/screenshot-astronews.png "Astro News")
+## 🌐 演示
 
-![performances](./src/assets/images/Performances.png "Performances")
+访问在线演示：[**Live Demo**](https://3x-alpha.com/)
 
-## 🌐 Demo
+## 🚀 本地运行
 
-Explore the live demo here: [**Live Demo**](https://astro-news-six.vercel.app/)
+按照以下步骤在本地设置并运行项目：
 
-## 🚀 Installation
-
-Follow the steps below to set up and run the project locally:
-
-### Clone the Repository
+### 克隆仓库
 
 ```bash
-git clone https://github.com/Mrahmani71/astro-news.git
+git clone https://github.com/johhhhnny/3x-Alpha.git
 ```
 
-### Install Dependencies
+### 安装依赖
 
 ``` bash
 bun install
 ```
 
-### Run Development Server
+### 运行开发服务器
 
 ```bash
 bun dev

@@ -29,7 +29,7 @@ export default defineConfig({
   image: {
     responsiveStyles: true,
     breakpoints: [640, 1024],
-    domains: ["cloudflare.com", "r2.dev", "tsladaily.com"],
+    domains: ["cloudflare.com", "r2.dev", "3x-alpha.com"],
     remotePatterns: [
       {
         protocol: "https",
@@ -41,7 +41,7 @@ export default defineConfig({
       },
       {
         protocol: "https",
-        hostname: "**.tsladaily.com",
+        hostname: "**.3x-alpha.com",
       },
     ],
   },

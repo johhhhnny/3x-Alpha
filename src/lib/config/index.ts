@@ -1,11 +1,11 @@
 import type { Link } from "../types";
 
 export const SITE = {
-  title: "TslaDaily",
-  description: "A news website built with Astro for TslaDaily",
-  author: "TslaDaily Team",
-  url: "https://tsladaily.com",
-  github: "https://github.com/Tsladaily/tsladaily",
+  title: "3x-Alpha",
+  description: "3倍杠杆ETF与期权策略分享博客",
+  author: "3x-Alpha Team",
+  url: "https://3x-alpha.com",
+  github: "https://github.com/johhhhnny/3x-Alpha",
   locale: "zh-CN",
   dir: "ltr",
   charset: "UTF-8",
@@ -15,20 +15,20 @@ export const SITE = {
 
 export const NAVIGATION_LINKS: Link[] = [
   {
-    href: "/categories/daily",
-    text: "每日特报",
+    href: "/categories/etf",
+    text: "杠杆 ETF",
   },
   {
-    href: "/categories/story",
-    text: "特有故事",
+    href: "/categories/options",
+    text: "期权策略",
   },
   {
-    href: "/categories/value",
-    text: "投资价值",
+    href: "/categories/market",
+    text: "市场分析",
   },
   {
-    href: "/categories/tech",
-    text: "科技前沿",
+    href: "/categories/portfolio",
+    text: "组合展示",
   },
 ];
 
@@ -58,11 +58,11 @@ export const OTHER_LINKS: Link[] = [
     text: "Cookie 政策",
   },
   {
-    href: "https://tsladaily.com/rss.xml",
+    href: "https://3x-alpha.com/rss.xml",
     text: "RSS 订阅",
   },
   {
-    href: "https://tsladaily.com/sitemap-index.xml",
+    href: "https://3x-alpha.com/sitemap-index.xml",
     text: "站点地图",
   },
 ];
