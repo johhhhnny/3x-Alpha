@@ -17,10 +17,7 @@ export const articlesHandler = {
     const article = articlesCollection.filter(
       (article) => article.data.isMainHeadline === true
     )[0];
-    if (!article)
-      throw new Error(
-        "Please ensure there is at least one item to display for the main headline."
-      );
+    if (!article) return articlesCollection[0] || null;
     return article;
   },
 
@@ -30,14 +27,15 @@ export const articlesHandler = {
       .filter(
         (article) =>
           article.data.isSubHeadline === true &&
-          mainHeadline.id !== article.id
+          (mainHeadline ? mainHeadline.id !== article.id : true)
       )
       .slice(0, 4);
 
-    if (subHeadlines.length === 0)
-      throw new Error(
-        "Please ensure there is at least one item to display for the sub headlines."
-      );
+    if (subHeadlines.length === 0) {
+      return articlesCollection
+        .filter((article) => (mainHeadline ? mainHeadline.id !== article.id : true))
+        .slice(0, 4);
+    }
     return subHeadlines;
   },
 };

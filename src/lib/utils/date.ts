@@ -1,7 +1,8 @@
 import { formatDistanceToNow, parseISO, format } from "date-fns";
+import { zhCN } from "date-fns/locale";
 
-const FORMAT_LONG = "EEEE, MMMM d, yyyy h:mm a zz";
-const FORMAT_SHORT = "MMMM dd, yyyy zz";
+const FORMAT_LONG = "yyyy年MM月dd日 EEEE HH:mm";
+const FORMAT_SHORT = "yyyy年MM月dd日";
 
 const dateCache = new Map<string, Date>();
 
@@ -9,6 +10,7 @@ const dateCache = new Map<string, Date>();
 export const getDateDistance = (date: string) =>
   formatDistanceToNow(parseISO(date), {
     addSuffix: true,
+    locale: zhCN,
   });
 
 

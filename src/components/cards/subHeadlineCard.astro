@@ -15,6 +15,10 @@ const { article, isLast, isFirst } = Astro.props;
 
 const { remarkPluginFrontmatter } = await render(article);
 const category = categoriesHandler.oneCategory(article.data.category.id);
+
+const imageProps = typeof article.data.cover === "string" 
+  ? { src: article.data.cover, inferSize: true as const } 
+  : { src: article.data.cover };
 ---
 
 <article
@@ -41,7 +45,7 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
       </div>
     </div>
     <div class="flex items-center text-xs text-base-content/80 mt-1 lg:mt-auto">
-      <span class="text-primary dark:text-secondary">{category.data.title}</span
+      <span class="text-primary dark:text-secondary">{category?.data.title}</span
       >
       <Divider />
       <span>{getDateDistance(remarkPluginFrontmatter.lastModified)}</span>
@@ -52,7 +56,7 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
     class="overflow-hidden w-[165px] h-[125px] md:w-[120px] md:h-full shrink-0"
   >
     <Image
-      src={article.data.cover}
+      {...imageProps}
       alt={article.data.covert_alt
         ? article.data.covert_alt
         : article.data.title}

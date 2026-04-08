@@ -25,7 +25,7 @@ if (!entry) {
         }
 
         // Import dynamically to ensure proper re-initialization
-        // @ts-expect-error
+        // @ts-ignore
         import("@pagefind/default-ui")
           .then(({ PagefindUI }) => {
             new PagefindUI({
@@ -33,6 +33,21 @@ if (!entry) {
               showSubResults: true,
               showImages: false,
               autofocus: true,
+              translations: {
+                placeholder: "搜索文章...",
+                clear_search: "清除",
+                load_more: "加载更多",
+                search_label: "搜索此站点",
+                filters_label: "筛选",
+                zero_results: "未找到 [SEARCH_TERM] 的相关结果",
+                many_results: "找到 [COUNT] 条 [SEARCH_TERM] 的相关结果",
+                one_result: "找到 1 条 [SEARCH_TERM] 的相关结果",
+                alt_search:
+                  "未找到 [SEARCH_TERM] 的相关结果。显示 [DIFFERENT_TERM] 的结果：",
+                search_suggestion:
+                  "未找到 [SEARCH_TERM] 的相关结果。请尝试以下搜索之一：",
+                searching: "正在搜索 [SEARCH_TERM]...",
+              },
             });
 
             const el = document.querySelector(".pagefind-ui");
@@ -44,7 +59,7 @@ if (!entry) {
             const query = params.get("q");
 
             if (clearButton) {
-              clearButton.textContent = "× Clear";
+              clearButton.textContent = "清除";
             }
             if (query && input) {
               input.value = query;

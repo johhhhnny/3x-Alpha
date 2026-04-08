@@ -17,12 +17,12 @@ import { NAVIGATION_LINKS, OTHER_LINKS } from "@/lib/config";
     tabindex="0"
     class="menu dropdown-content z-50 bg-base-100 rounded-box w-56 shadow"
   >
-    <li><a href="/" aria-label="Homepage">Home</a></li>
-    <li><a href="/articles" aria-label="Articles Page">Articles</a></li>
+    <li><a href="/" aria-label="首页">首页</a></li>
+    <li><a href="/articles" aria-label="所有文章">所有文章</a></li>
 
     <li>
-      <details>
-        <summary>Categories</summary>
+      <details open>
+        <summary>文章分类</summary>
         <ul>
           {
             NAVIGATION_LINKS.map(({ href, text, target }) => (
@@ -38,8 +38,8 @@ import { NAVIGATION_LINKS, OTHER_LINKS } from "@/lib/config";
     </li>
 
     <li>
-      <details>
-        <summary>Other Pages</summary>
+      <details open>
+        <summary>其他页面</summary>
         <ul>
           {
             OTHER_LINKS.map(({ href, text, target }) => (

@@ -6,7 +6,7 @@ export const articleSchema = (image: ImageFunction) =>
     isDraft: z.boolean().default(false),
     isMainHeadline: z.boolean().default(false),
     isSubHeadline: z.boolean().default(false),
-    cover: image(),
+    cover: z.union([image(), z.string().url()]),
     covert_alt: z.string().optional(),
     title: z.string().max(60, "Too long, max 60 characters"),
     description: z.string().max(160, "Too long, max 160 characters"),
@@ -31,11 +31,11 @@ export const categorySchema = z.object({
     ),
 });
 
-export const authorSchema = (Image: ImageFunction) =>
+export const authorSchema = (image: ImageFunction) =>
   z.object({
     name: z.string(),
     job: z.string(),
-    avatar: Image(),
+    avatar: z.union([image(), z.string().url()]),
     bio: z.string(),
     social: z.array(
       z.object({

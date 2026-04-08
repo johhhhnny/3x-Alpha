@@ -7,7 +7,7 @@ export default config({
   },
   ui: {
     brand: {
-      name: "Astro News",
+      name: "TslaDaily",
     },
     navigation: ["---", "articles", "---", "authors", "categories"],
   },

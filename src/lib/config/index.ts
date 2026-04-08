@@ -1,12 +1,12 @@
 import type { Link } from "../types";
 
 export const SITE = {
-  title: "Astro News",
-  description: "A news website built with Astro",
-  author: "Mohammad Rahmani",
-  url: "https://astro-news-six.vercel.app",
-  github: "https://github.com/Mrahmani71/astro-news",
-  locale: "en-US",
+  title: "TslaDaily",
+  description: "A news website built with Astro for TslaDaily",
+  author: "TslaDaily Team",
+  url: "https://tsladaily.com",
+  github: "https://github.com/Tsladaily/tsladaily",
+  locale: "zh-CN",
   dir: "ltr",
   charset: "UTF-8",
   basePath: "/",
@@ -15,63 +15,55 @@ export const SITE = {
 
 export const NAVIGATION_LINKS: Link[] = [
   {
-    href: "/categories/technology",
-    text: "Technology",
+    href: "/categories/daily",
+    text: "每日特报",
   },
   {
-    href: "/categories/programming",
-    text: "Programming",
+    href: "/categories/story",
+    text: "特有故事",
   },
   {
-    href: "/categories/lifestyle",
-    text: "Lifestyle",
+    href: "/categories/value",
+    text: "投资价值",
   },
   {
-    href: "/categories/productivity",
-    text: "Productivity",
-  },
-  {
-    href: "/categories/health",
-    text: "Health",
-  },
-  {
-    href: "/categories/finance",
-    text: "Finance",
+    href: "/categories/tech",
+    text: "科技前沿",
   },
 ];
 
 export const OTHER_LINKS: Link[] = [
   {
     href: "/about",
-    text: "About us",
+    text: "关于我们",
   },
   {
     href: "/authors",
-    text: "Authors",
+    text: "作者列表",
   },
   {
     href: "/contact",
-    text: "Contact",
+    text: "联系我们",
   },
   {
     href: "/privacy",
-    text: "Privacy",
+    text: "隐私政策",
   },
   {
     href: "/terms",
-    text: "Terms",
+    text: "服务条款",
   },
   {
     href: "/cookie-policy",
-    text: "Cookie Policy",
+    text: "Cookie 政策",
   },
   {
-    href: "https://astro-news-six.vercel.app/rss.xml",
-    text: "RSS",
+    href: "https://tsladaily.com/rss.xml",
+    text: "RSS 订阅",
   },
   {
-    href: "https://astro-news-six.vercel.app/sitemap-index.xml",
-    text: "Sitemap",
+    href: "https://tsladaily.com/sitemap-index.xml",
+    text: "站点地图",
   },
 ];
 
@@ -82,13 +74,13 @@ export const SOCIAL_LINKS: Link[] = [
     icon: "github",
   },
   {
-    href: "httpe://www.t.me",
+    href: "https://t.me",
     text: "Telegram",
     icon: "telegram",
   },
   {
     href: "https://twitter.com",
-    text: "Twitter",
+    text: "Twitter (X)",
     icon: "newTwitter",
   },
   {

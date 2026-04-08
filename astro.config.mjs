@@ -29,6 +29,21 @@ export default defineConfig({
   image: {
     responsiveStyles: true,
     breakpoints: [640, 1024],
+    domains: ["cloudflare.com", "r2.dev", "tsladaily.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.cloudflare.com",
+      },
+      {
+        protocol: "https",
+        hostname: "**.r2.dev",
+      },
+      {
+        protocol: "https",
+        hostname: "**.tsladaily.com",
+      },
+    ],
   },
   integrations,
   vite: {

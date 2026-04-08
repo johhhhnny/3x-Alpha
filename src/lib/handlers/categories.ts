@@ -7,10 +7,7 @@ export const categoriesHandler = {
     allCategories: () => categoriesCollection.sort((a, b) => a.data.title.localeCompare(b.data.title)),
     oneCategory: (categoryId: string) => {
         const category = categoriesCollection.find((category) => category.id === categoryId);
-        if (!category) {
-            throw new Error(`Category with id ${categoryId} not found`);
-        }
-        return category;
+        return category || null;
     },
     allCategoriesWithLatestArticles: () => {
         return categoriesCollection.map((category) => {

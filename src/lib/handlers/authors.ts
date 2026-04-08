@@ -8,17 +8,11 @@ export const authorsHandler = {
   getAuthors: (authors: { collection: string; id: string }[]) => {
     return authors.map(({ id }) => {
       const author = authorsCollection.find((author) => author.id === id);
-      if (!author) {
-        throw new Error(`Author ${id} not found`);
-      }
-      return author;
-    });
+      return author || null;
+    }).filter(author => author !== null);
   },
   findAuthor: (id: string) => {
     const author = authorsCollection.find((author) => author.id === id);
-    if (!author) {
-      throw new Error(`Author ${id} not found`);
-    }
-    return author;
+    return author || null;
   },
 };

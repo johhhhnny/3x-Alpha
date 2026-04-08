@@ -19,6 +19,11 @@ const { article, readingTime } = Astro.props;
 
 const category = categoriesHandler.oneCategory(article.data.category.id);
 const authors = authorsHandler.getAuthors(article.data.authors);
+
+const imageProps =
+  typeof article.data.cover === "string"
+    ? { src: article.data.cover, inferSize: true as const }
+    : { src: article.data.cover };
 ---
 
 <section
@@ -28,7 +33,7 @@ const authors = authorsHandler.getAuthors(article.data.authors);
     class="container px-0 max-w-5xl lg:mt-4 overflow-hidden aspect-[20/9] lg:rounded-md"
   >
     <Picture
-      src={article.data.cover}
+      {...imageProps}
       alt="article"
       layout="full-width"
       loading={"eager"}
@@ -38,8 +43,8 @@ const authors = authorsHandler.getAuthors(article.data.authors);
   </div>
   <div class="container my-4 max-w-5xl lg:hidden flex items-center gap-2">
     <ResourcesAdd size="16" />
-    <a href={`/categories/${category.data.path}`} class="a-01 font-semibold"
-      >{category.data.title}</a
+    <a href={`/categories/${category?.data.path}`} class="a-01 font-semibold"
+      >{category?.data.title}</a
     >
   </div>
   <div class="container max-w-5xl">
@@ -50,8 +55,8 @@ const authors = authorsHandler.getAuthors(article.data.authors);
       <div class="text-base-content/70 flex items-center gap-2">
         <span class="hidden lg:flex items-center gap-1">
           <ResourcesAdd size="15" />
-          <a href={`/categories/${category.id}`} class="a-01 font-semibold"
-            >{category.data.title}</a
+          <a href={`/categories/${category?.id}`} class="a-01 font-semibold"
+            >{category?.data.title}</a
           >
         </span>
         <Divider responsive />
@@ -90,19 +95,21 @@ const authors = authorsHandler.getAuthors(article.data.authors);
                 >
                   <div class="avatar">
                     <div class="w-8 rounded-full">
-                      <Image
-                        src={author.data.avatar}
-                        alt="author"
-                        width={48}
-                        height={48}
-                        loading={"eager"}
-                        format="webp"
-                        layout="constrained"
-                        quality={80}
-                      />
+                      {author.data.avatar && (
+                        <Image
+                          src={author.data.avatar}
+                          alt="author"
+                          width={48}
+                          height={48}
+                          loading={"eager"}
+                          format="webp"
+                          layout="constrained"
+                          quality={80}
+                        />
+                      )}
                     </div>
                   </div>
-                  <span class="font-bold capitalize">{author.data.name}</span>
+                  <span class="font-semibold">{author.data.name}</span>
                 </a>
               </div>
             ))

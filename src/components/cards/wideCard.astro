@@ -10,6 +10,10 @@ type Props = {
 };
 
 const { article, isLast } = Astro.props;
+
+const imageProps = typeof article.data.cover === "string" 
+  ? { src: article.data.cover, inferSize: true as const } 
+  : { src: article.data.cover };
 ---
 
 <li
@@ -28,7 +32,7 @@ const { article, isLast } = Astro.props;
   >
     <div class="w-full lg:w-60 aspect-video">
       <Image
-        src={article.data.cover}
+        {...imageProps}
         alt={article.data.covert_alt
           ? article.data.covert_alt
           : article.data.title}

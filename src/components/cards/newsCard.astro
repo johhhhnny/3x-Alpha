@@ -14,6 +14,10 @@ const { article, index } = Astro.props;
 
 const { remarkPluginFrontmatter } = await render(article);
 const category = categoriesHandler.oneCategory(article.data.category.id);
+
+const imageProps = typeof article.data.cover === "string" 
+  ? { src: article.data.cover, inferSize: true as const } 
+  : { src: article.data.cover };
 ---
 
 <article
@@ -21,7 +25,7 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
 >
   <div class="aspect-video overflow-hidden rounded-md">
     <Image
-      src={article.data.cover}
+      {...imageProps}
       alt={article.data.covert_alt
         ? article.data.covert_alt
         : article.data.title}
@@ -44,7 +48,7 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
     </p>
     <div class="flex items-center text-xs text-base-content/80 mt-2">
       <span class="text-xs text-primary dark:text-secondary"
-        >{category.data.title}</span
+        >{category?.data.title}</span
       >
       <Divider />
       <span class="text-xs text-base-content/80"
