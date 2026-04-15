@@ -1,0 +1,39 @@
+---
+// Giscus 评论组件
+// 使用 GitHub Discussions 实现评论功能
+// 需要配置：
+// 1. 创建公开的 GitHub 仓库
+// 2. 启用 Discussions
+// 3. 在 https://giscus.app 配置获取脚本参数
+
+interface Props {
+  term?: string; // 用于匹配讨论的标识符，默认为页面标题
+}
+
+const { term } = Astro.props;
+---
+
+<script
+  src="https://giscus.app/client.js"
+  data-repo="johhhhnny/3x-Alpha"
+  data-repo-id="R_kgDONfW3IQ"
+  data-category="Announcements"
+  data-category-id="DIC_kwDONfW3Ic4Cm-c3"
+  data-mapping={term || "title"}
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-CN"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async></script>
+
+<style>
+  :global(.giscus) {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+</style>
