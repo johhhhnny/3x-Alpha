@@ -15,9 +15,10 @@ const { article, index } = Astro.props;
 const { remarkPluginFrontmatter } = await render(article);
 const category = categoriesHandler.oneCategory(article.data.category.id);
 
-const imageProps = typeof article.data.cover === "string" 
-  ? { src: article.data.cover, inferSize: true as const } 
-  : { src: article.data.cover };
+const imageProps =
+  typeof article.data.cover === "string"
+    ? { src: article.data.cover, inferSize: true as const }
+    : { src: article.data.cover };
 ---
 
 <article
@@ -26,9 +27,7 @@ const imageProps = typeof article.data.cover === "string"
   <div class="aspect-video overflow-hidden rounded-md">
     <Image
       {...imageProps}
-      alt={article.data.covert_alt
-        ? article.data.covert_alt
-        : article.data.title}
+      alt={article.data.cover_alt ? article.data.cover_alt : article.data.title}
       loading={index < 3 ? "eager" : "lazy"}
       layout="constrained"
       class="w-full h-full object-cover"

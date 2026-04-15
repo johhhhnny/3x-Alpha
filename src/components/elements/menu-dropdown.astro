@@ -1,6 +1,9 @@
 ---
 import Menu from "@/assets/svgs/menu.astro";
-import { NAVIGATION_LINKS, OTHER_LINKS } from "@/lib/config";
+import { categoriesHandler } from "@/lib/handlers/categories";
+import { OTHER_LINKS } from "@/lib/config";
+
+const categories = categoriesHandler.allCategories();
 ---
 
 <div class="dropdown">
@@ -25,10 +28,13 @@ import { NAVIGATION_LINKS, OTHER_LINKS } from "@/lib/config";
         <summary>文章分类</summary>
         <ul>
           {
-            NAVIGATION_LINKS.map(({ href, text, target }) => (
+            categories.map((category) => (
               <li>
-                <a href={href} target={target ?? "_self"} aria-label={text}>
-                  {text}
+                <a
+                  href={`/categories/${category.data.path}`}
+                  aria-label={category.data.title}
+                >
+                  {category.data.title}
                 </a>
               </li>
             ))

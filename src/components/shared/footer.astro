@@ -1,7 +1,10 @@
 ---
-import { NAVIGATION_LINKS, SOCIAL_LINKS, OTHER_LINKS } from "@/lib/config";
+import { categoriesHandler } from "@/lib/handlers/categories";
+import { SOCIAL_LINKS, OTHER_LINKS } from "@/lib/config";
 import Hashtag from "@/assets/svgs/hashtag.astro";
 import Icon from "../bases/icon.astro";
+
+const categories = categoriesHandler.allCategories();
 ---
 
 <footer
@@ -25,9 +28,12 @@ import Icon from "../bases/icon.astro";
         <a href="/" class="link link-hover">首页</a>
         <a href="/articles" class="link link-hover">所有文章</a>
         {
-          NAVIGATION_LINKS.map(({ href, text, target }) => (
-            <a href={href} class="link link-hover" target={target ?? "_self"}>
-              {text}
+          categories.map((category) => (
+            <a
+              href={`/categories/${category.data.path}`}
+              class="link link-hover"
+            >
+              {category.data.title}
             </a>
           ))
         }
@@ -66,6 +72,16 @@ import Icon from "../bases/icon.astro";
           ))
         }
       </nav>
+      <div
+        class="mt-4 p-4 bg-base-200/50 rounded-lg text-xs text-base-content/70"
+      >
+        <p class="font-bold mb-1">免责声明：</p>
+        <p>
+          本网站所提供的内容仅供参考和交流，不构成任何形式的投资建议、财务建议或法律建议。杠杆
+          ETF (如 TQQQ, UPRO)
+          及期权交易具有极高的风险，可能导致本金的快速损失。在做出任何投资决定之前，请务必咨询专业的财务顾问，并充分了解相关风险。投资有风险，入市需谨慎。
+        </p>
+      </div>
     </div>
   </div>
 </footer>

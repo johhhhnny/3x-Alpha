@@ -13,6 +13,30 @@ if (!entry) {
 ---
 
 <BaseLayout entry={entry}>
+  <div class="container mt-4">
+    <div
+      class="bg-warning/10 border-l-4 border-warning p-4 rounded-r-lg text-sm flex items-start gap-3"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="size-5 text-warning shrink-0 mt-0.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" x2="12" y1="8" y2="12" />
+        <line x1="12" x2="12.01" y1="16" y2="16" />
+      </svg>
+      <p class="text-base-content/80">
+        <span class="font-bold text-base-content">重要声明：</span>
+        本站分享的杠杆 ETF 及期权交易策略仅供学习研究，不构成任何投资建议。杠杆产品风险极高，投资需独立思考并谨慎决策。
+      </p>
+    </div>
+  </div>
   <Headlines />
   <LatestNews />
   <Authors />

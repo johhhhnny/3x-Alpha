@@ -26,5 +26,29 @@ const { Content, remarkPluginFrontmatter } = await render(article);
   />
   <ContentLayout>
     <Content />
+    <div
+      class="mt-12 p-6 border border-warning/30 bg-warning/5 rounded-xl text-sm italic text-base-content/80"
+    >
+      <div class="flex items-center gap-2 mb-2 text-warning font-bold not-italic">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="size-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+          <path d="M12 9v4" />
+          <path d="M12 17h.01" />
+        </svg>
+        <span>投资免责声明</span>
+      </div>
+      <p>
+        本文内容仅供信息参考和策略研究交流之用，不应被视为购买、持有或出售任何证券或金融产品的建议。作者并非持牌财务顾问。杠杆产品具有极高的波动性，并不适合所有投资者。在实施任何期权或杠杆 ETF 策略前，请根据您的财务状况和风险承受能力咨询专业顾问。过往表现不代表未来结果。
+      </p>
+    </div>
   </ContentLayout>
 </BaseLayout>

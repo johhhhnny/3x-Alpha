@@ -11,9 +11,10 @@ type Props = {
 
 const { article, isLast } = Astro.props;
 
-const imageProps = typeof article.data.cover === "string" 
-  ? { src: article.data.cover, inferSize: true as const } 
-  : { src: article.data.cover };
+const imageProps =
+  typeof article.data.cover === "string"
+    ? { src: article.data.cover, inferSize: true as const }
+    : { src: article.data.cover };
 ---
 
 <li
@@ -33,8 +34,8 @@ const imageProps = typeof article.data.cover === "string"
     <div class="w-full lg:w-60 aspect-video">
       <Image
         {...imageProps}
-        alt={article.data.covert_alt
-          ? article.data.covert_alt
+        alt={article.data.cover_alt
+          ? article.data.cover_alt
           : article.data.title}
         layout="constrained"
         loading={"eager"}
