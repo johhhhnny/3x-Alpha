@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "clean": "rm -rf .astro dist node_modules/.vite",
+    "clean:dev": "npm run clean && npm run dev"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
