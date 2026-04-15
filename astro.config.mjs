@@ -14,7 +14,8 @@ const { RUN_KEYSTATIC } = loadEnv(import.meta.env.MODE, process.cwd(), "");
 
 const integrations = [mdx(), sitemap(), pagefind()];
 
-if (RUN_KEYSTATIC === "true") {
+const enableKeystatic = RUN_KEYSTATIC === "true" && import.meta.env.DEV;
+if (enableKeystatic) {
   integrations.push(react());
   integrations.push(keystatic());
 }
