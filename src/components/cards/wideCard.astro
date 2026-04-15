@@ -42,14 +42,16 @@ const imageProps =
         class="aspect-video rounded w-full h-full"
       />
     </div>
-    <div class="flex-1 space-y-2">
-      <h3 class="text-xl font-semibold lg:group-hover:underline">
+    <div class="flex-1 space-y-3">
+      <h3
+        class="text-xl font-serif font-extrabold text-base-content tracking-tight leading-tight lg:group-hover:underline"
+      >
         <a href={`/articles/${article.id}`}>
           <span class="absolute inset-0 z-10"></span>
           {article.data.title}
         </a>
       </h3>
-      <p class="text-base-content/80 max-w-xl text-pretty">
+      <p class="text-base-content/60 max-w-xl text-pretty list-copy">
         {article.data.description}
       </p>
     </div>

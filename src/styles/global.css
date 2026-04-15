@@ -10,10 +10,8 @@
 
 @theme {
   /* Font Family */
-  --font-sans: "Source Sans Pro", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: "Source Serif 4 Variable", ui-serif, Georgia, Cambria,
-    "Times New Roman", Times, serif;
+  --font-sans: "Source Sans Pro", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Source Serif 4 Variable", "Noto Serif SC", "Songti SC", "STSong", "SimSun", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
   --breakpoint-2xl: initial;
 }
@@ -33,12 +31,17 @@
   }
 
   body {
-    @apply font-sans antialiased h-full;
+    @apply font-sans antialiased h-full leading-7;
   }
 
   h1,
-  h2 {
-    @apply font-serif;
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-bold;
+    letter-spacing: -0.02em;
   }
 
   small,
@@ -46,6 +49,12 @@
     @apply text-sm;
   }
   .prose {
+    font-family: var(--font-sans);
+    line-height: 1.75;
+    hyphens: none;
+    letter-spacing: 0;
+    word-break: break-word;
+    text-wrap: pretty;
     pre {
       code {
         span,
@@ -54,6 +63,19 @@
         }
       }
     }
+  }
+  .card-title,
+  .article-title,
+  .page-title {
+    font-family: var(--font-serif);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+  }
+  .card-copy,
+  .article-copy,
+  .list-copy {
+    line-height: 1.75;
+    letter-spacing: 0;
   }
 }
 
