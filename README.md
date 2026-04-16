@@ -1,102 +1,46 @@
 # 3x-Alpha 📈
 
-一个专注于 3 倍杠杆 ETF 与期权策略分享的现代博客。
+一个专注于杠杆 ETF 与期权策略分享的财经博客。
+(https://3x-alpha.com/)
 
-> **ℹ️ 信息**  
-> 3x-Alpha 旨在为投资者提供深度的杠杆 ETF 分析和实用的期权交易策略。
+使用 Astro 构建
 
-## 🌐 演示
-
-访问在线演示：[**Live Demo**](https://3x-alpha.com/)
-
-## 🚀 本地运行
-
-按照以下步骤在本地设置并运行项目：
-
-### 克隆仓库
-
-```bash
-git clone https://github.com/johhhhnny/3x-Alpha.git
-```
+## 🚀 快速开始
 
 ### 安装依赖
 
-``` bash
-bun install
+```bash
+npm install
 ```
 
-### 运行开发服务器
+### 常用命令
+
+| 命令 | 说明 |
+|------|------|
+| `npm run dev` | 启动开发服务器，同时显示本地应用 URL 和 Keystatic CMS 后台 URL |
+| `npm run dev:astro` | 直接启动 Astro 开发服务器（不显示额外 URL） |
+| `npm run build` | 构建生产版本到 `dist/` 目录 |
+| `npm run preview` | 预览生产构建版本 |
+| `npm run clean` | 清理 `.astro`、`dist` 和 `.vite` 缓存 |
+| `npm run clean:dev` | 清理缓存后启动开发服务器 |
+| `npm run astro -- --help` | 查看 Astro CLI 完整帮助文档 |
+
+### 开发流程
+
+1. 启动开发服务器：
+   ```bash
+   npm run dev
+   ```
+
+2. 打开浏览器访问：
+   - 📱 **应用**: http://127.0.0.1:4321/
+   - 📝 **CMS 后台**: http://127.0.0.1:4321/keystatic
+
+3. 修改代码后自动热更新
+
+### 构建和部署
 
 ```bash
-bun dev
+npm run build   # 构建生产版本
+npm run preview # 本地预览构建结果
 ```
-
-### Running Keystatic CMS
-
-1. Rename `.env.example` to `.env`.
-
-2. Set `RUN_KEYSTATIC=true`.
-
-3. Start the development server:
-
- ```bash
-    bun dev 
-  ```
-
-4. Open `http://localhost:4321/keystatic` in your browser.
-
-## ✨ Features
-
-### Implemented Features
-
-- Content Layer
-- Keystatic CMS
-- Navigation
-- Responsive Design
-- Pagination
-- Search Functionality
-- RSS Feed
-- Sitemap
-- Dark Mode
-- SEO Optimization (~)
-
-### Upcoming Features
-
-- Open Graph (OG) Image Generation
-
-## 💻 Technologies
-
-This project leverages cutting-edge web technologies:
-
-- [Astro V5.7](https://astro.build) - Modern static site builder
-- [KeyStatic](https://keystatic.com) - Headless content-management system
-- [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS framework
-- [DaisyUI](https://daisyui.com/) - Tailwind CSS component library
-- [TypeScript](https://typescriptlang.org) - Typed JavaScript
-- [MDX](https://mdxjs.com) - Markdown with JSX support
-- [Bun V1.2.10](https://bun.sh) - Fast JavaScript runtime
-- [Vercel](https://vercel.com) - Deployment platform
-- [HugeIcons](https://hugeicons.com) - Icon library
-
-## 💡  Inspirations and Code Concepts
-
-This project draws inspiration from the following sources:
-
-### Designs
-
-- [BBC News](https://www.bbc.com)
-- [NewsHub - News Website](https://dribbble.com/shots/21678041-NewsHub-News-Website)
-- [Let'sread - News Landing Page](https://dribbble.com/shots/24675325-Let-sread-News-Landing-Page)
-
-### Articles
-
-- [Creating A Pagination Component With Astro](https://rimdev.io/creating-a-pagination-component-with-astro)
-- [Adding search to static Astro sites](https://website-thomas-astro.vercel.app/blog/search-static-astro-website)
-
-## 📄 License
-
-Open sourced under the [MIT license](LICENSE.md).
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Mrahmani71/astro-news/issues).

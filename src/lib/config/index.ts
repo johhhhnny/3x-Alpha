@@ -2,7 +2,7 @@ import type { Link } from "../types";
 
 export const SITE = {
   title: "3x-Alpha",
-  description: "3倍杠杆ETF与期权策略分享博客",
+  description: "一个关于杠杆、期权与底层认知进化的深度思考空间。",
   author: "3x-Alpha Team",
   url: "https://3x-alpha.com",
   github: "https://github.com/johhhhnny/3x-Alpha",
