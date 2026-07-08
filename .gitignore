@@ -1,1 +1,15 @@
+# 存放 Astro 和各种插件运转所需的底层代码
 node_modules
+
+# 环境变量文件
+.env
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.fseventsd
