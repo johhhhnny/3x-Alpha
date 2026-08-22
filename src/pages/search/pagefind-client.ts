@@ -7,6 +7,7 @@ declare global {
 }
 
 const initializePagefind = () => {
+  if (typeof window === "undefined" || typeof document === "undefined") return;
   if (window.__pagefind_initialized__) return;
 
   const target = document.querySelector("#search");
@@ -45,10 +46,12 @@ const initializePagefind = () => {
   }
 };
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initializePagefind);
-} else {
-  initializePagefind();
-}
+if (typeof document !== "undefined") {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializePagefind);
+  } else {
+    initializePagefind();
+  }
 
-document.addEventListener("astro:page-load", initializePagefind);
+  document.addEventListener("astro:page-load", initializePagefind);
+}

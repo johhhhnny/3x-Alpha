@@ -30,6 +30,7 @@ export const articlesKs = collection({
       label: "Cover",
       directory: "src/assets/images/articles",
       publicPath: "@assets/images/articles/",
+      description: "可选。未上传封面时将使用默认图片。",
     }),
     category: fields.relationship({
       label: "Category",
